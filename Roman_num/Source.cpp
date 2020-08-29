@@ -1,15 +1,48 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <string>
 #include <conio.h>
 using namespace std;
-
-
-int main()
+int getValue()
 {
+	while (true) // The loop continues until the user enters the correct value
+	{
+		std::cout << "Enter an integer arabic number which does not exceed 8999: ";
+		int a;
+		std::cin >> a;
+		// Checking for a previous checkout
+		if (std::cin.fail() || a > 8999) // If the previous extraction failed,
+		{
+			std::cin.clear(); // then we return cin to 'normal' operation
+			std::cin.ignore(32767, '\n'); // and remove the values ​​of the previous input from the input buffer
+			std::cout << "Oops, that input is invalid. Please try again.\n";
+		}
+		else
+		{
+			std::cin.ignore(32767, '\n'); // Remove unnecessary values
+			return a;
+		}
+	}
+}
 
+int Menu()
+{
+	int a;
+
+	cout << "Start menu: ";
+	cout << endl << "1. Convert Arabic to Roman Numerals.";
+	cout << endl << "2. Exit.";
+	
+
+	a = _getch();
+
+	return a;
+}
+void ArabicToRoman()
+{
+	system("cls");
 	char one[4] = { 'I','X', 'C', 'M' };
-	char five[4] = { 'V', 'L', 'D', };
+	char five[4] = { 'V', 'L', 'D' };
 	char RomanNumber[30];
 	int number;
 
@@ -19,8 +52,7 @@ int main()
 	// Index for one and five arrays that inctements when we go to the next position in number
 	int j = 0;
 
-	cout << "Input arabic number: ";
-	cin >> number;
+	number = getValue();
 	do
 	{
 		// We look at the last number
@@ -87,6 +119,38 @@ int main()
 
 	for (int i = strlen(RomanNumber) - 1; i >= 0; i--) {
 		cout << RomanNumber[i];
+	}
+	cout << endl << "Press any key to continue...";
+	_getch();
+	
+
+}
+
+int main()
+{
+	while (1)
+	{
+		system("cls");
+
+		switch (Menu())
+		{
+		case '1':
+
+			ArabicToRoman();
+
+			break;
+
+		case '2':
+
+			return 1;
+
+		default:
+
+			cout << "\nIncorrect input." << endl << "Press any key to continue...";
+
+			_getch();
+			break;
+		}
 	}
 
 	_getch();

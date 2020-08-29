@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-D:\c\projects\Roman_numbers\Roman_num\Source.cpp(88,38): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\c\projects\Roman_numbers\Roman_num\Source.cpp(120,38): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
   Roman_num.vcxproj -> D:\c\projects\Roman_numbers\x64\Debug\Roman_num.exe
