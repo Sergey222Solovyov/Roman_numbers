@@ -1,8 +1,8 @@
 ﻿#include <iostream>
-#include <vector>
-#include <string>
 #include <conio.h>
+
 using namespace std;
+
 int getValue()
 {
 	while (true) // The loop continues until the user enters the correct value
@@ -38,6 +38,7 @@ int Menu()
 
 	return a;
 }
+
 void ArabicToRoman()
 {
 	system("cls");
